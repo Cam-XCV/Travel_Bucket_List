@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br><br>
+<h1>{{country.name}}</h1>
+
+<div class="cities">
+{% for city in cities %}
+    <a href="/countries/{{country.id}}/{{city.id}}">{{city.name}} </a>
+    {% if city.visited == True %}
+        <p>&#9989</p>
+    {% else %}
+        <p>&#10060</p>
+    {% endif %}
+
+
+    <div class="buttons">
+    <form action="/countries/{{country.id}}/{{city.id}}/delete" class="delete-button" method="POST">
+    <input type="submit" value="delete">
+    </form>
+   
+    <form action="/countries/{{country.id}}/{{city.id}}/mark-visit" class="mark-button" method="POST">
+    <input type="submit" value="mark visit">
+    </form>
+    </div>
+    <br>
+{% endfor %}
+</div>
+
+<br><br>
+
+<div>
+<form action="/countries/{{country.id}}/new" method="POST">
+        <label for="cityname">Add a new City?</label>
+        <input type="text" name="cityname">
+        <input type="submit" value="add">
+</div>
+
+{% endblock %}

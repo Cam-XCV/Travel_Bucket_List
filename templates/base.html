@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Travel Bucket List</title>
+</head>
+<body>
+    <nav>
+        <ul>
+        <li><a href="/"><b>Home</b></a></li>
+        <li><a href="/countries"><b>Countries</b></a></li>
+        <li><a href="/search"><b>Search</b></a></li>     <!-- doesn't link anywhere :) -->
+        </ul>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>

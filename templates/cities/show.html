@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br>
+
+<!-- have sights pulled in to reference -->
+
+<h1>{{city.name}}</h1>
+<br>
+
+<div class="review">
+<h2><u>Review</u></h2>
+<p>
+    In an ideal world this would be a nice little area for you to leave a review if you have visited it.
+</p>
+<p>
+
+</p>
+
+
+
+</div>
+<br><br>
+<div class="sights">
+<h3>Sights visited:</h3>
+
+    {% for sight in sights %}
+    <p>{{sight.name}} - {{sight.visited}}</p>
+    <button>mark visit</button>
+
+    {% endfor %}
+</div>
+
+
+
+<p>
+
+
+
+
+
+
+
+{% endblock %}

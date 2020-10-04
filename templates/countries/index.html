@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br>
+<h1>Countries</h1>
+
+
+<!-- search bar here -->
+
+<div class="countries">
+    <div class="country">
+    {% for country in countries %}
+        <a href="/countries/{{country.id}}"><p>{{ country.name }}</p></a>
+
+        <form action="/countries/{{country.id}}/delete" class="delete-button" method="POST">
+            <input type="submit" value="delete">
+        </form>
+        <br>
+    {% endfor %}
+    </div>
+<br><br>
+    
+        <form action="/countries/new" method="POST">
+            <label for="countryname">Add a new Country?</label>
+            <input type="text" name="countryname">
+            <input type="submit" value="add">
+        </form>
+</div>
+
+
+{% endblock%}
