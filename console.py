@@ -50,10 +50,3 @@ sight_repository.save(sight_6)
 sight_repository.save(sight_7)
 
 
-# print(sight_repository.select_all())
-# print(city_repository.select_all())
-# print(country_repository.select_all())
-
-# print(country_repository.cities(country_1))
-
-pdb.set_trace()

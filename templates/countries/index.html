@@ -8,22 +8,21 @@
 <!-- search bar here -->
 
 <div class="countries">
-    <div class="country">
     {% for country in countries %}
+    <div class="country">
         <a href="/countries/{{country.id}}"><p>{{ country.name }}</p></a>
 
         <form action="/countries/{{country.id}}/delete" class="delete-button" method="POST">
-            <input type="submit" value="delete">
+            <input type="submit" value="Delete">
         </form>
-        <br>
-    {% endfor %}
     </div>
+    {% endfor %}
+
 <br><br>
-    
         <form action="/countries/new" method="POST">
             <label for="countryname">Add a new Country?</label>
             <input type="text" name="countryname">
-            <input type="submit" value="add">
+            <input type="submit" value="Add">
         </form>
 </div>
 
